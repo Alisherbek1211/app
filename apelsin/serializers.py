@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from .models import Products
+from .models import Phone,Category
 
-class ProductSerializers(serializers.ModelSerializer):
+class CategorySerializers(serializers.ModelSerializer):
     class Meta:
-        model = Products
+        model = Category
+        fields = '__all__'
+        
+
+class PhoneSerializers(serializers.ModelSerializer):
+    category = CategorySerializers(read_only=True)
+    class Meta:
+        model = Phone
         fields = '__all__'
