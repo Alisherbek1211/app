@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Phone',
+            name='Household',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
@@ -47,16 +47,14 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('image', models.ImageField(upload_to='')),
                 ('price', models.CharField(max_length=255)),
-                ('ram', models.CharField(blank=True, choices=[('4', '4'), ('8', '8'), ('12', '12')], max_length=255, null=True)),
-                ('rom', models.CharField(blank=True, choices=[('32', '32'), ('64', '64'), ('128', '128'), ('256', '256')], max_length=255, null=True)),
                 ('color', models.CharField(max_length=255)),
                 ('descriptions', models.TextField()),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apelsin.category')),
-                ('model', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apelsin.model')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Household.category')),
+                ('model', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Household.model')),
             ],
             options={
-                'verbose_name': 'Telefon va gadjetlar',
-                'verbose_name_plural': 'Telefon va gadjetlar',
+                'verbose_name': 'Maishiy Texnika',
+                'verbose_name_plural': 'Maishiy Texnikalar',
             },
         ),
     ]

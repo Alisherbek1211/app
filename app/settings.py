@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     
     'apelsin',
+    'Household',
+    'office',
+    'climate',
+    'television',
+    'computer',
 ]
 
 MIDDLEWARE = [

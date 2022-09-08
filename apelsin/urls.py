@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import PhoneListApiView,PhoneUpdateView
+from .views import PhoneListApiView,PhoneUpdateView,CategoryListApiView,CategoryUpdateView
 
 urlpatterns = [
-    path('phone/',PhoneListApiView.as_view()),  
-    path('phone/<int:pk>/',PhoneUpdateView.as_view()),  
+    path('',PhoneListApiView.as_view()),  
+    path('<int:pk>/',PhoneUpdateView.as_view()),
+    path('category/',CategoryListApiView.as_view()),  
+    path('category/<int:pk>/',CategoryUpdateView.as_view()),   
 ]
