@@ -2,7 +2,10 @@ from django.db import models
 from helpers.models import BaseModel
 
 Ram_Choises = [
+    ('2','2'),
+    ('3','3'),
     ('4','4'),
+    ('6','6'),
     ('8','8'),
     ('12','12'),
 ]
@@ -12,10 +15,12 @@ Rom_Choices = [
     ('64','64'),
     ('128','128'),
     ('256','256'),
+    ('512','512'),
 ]
 
 class Category(BaseModel):
     name = models.CharField(max_length=255)
+    icon = models.ImageField()
 
     class Meta:
         verbose_name = "Kategoriya"

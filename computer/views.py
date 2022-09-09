@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
-from .models import Computer,Category
-from .serializers import ComputerSerializers,CategorySerializers
+from .models import Computer,Category,Model
+from .serializers import ComputerSerializers,CategorySerializers,ModelSerializers
 
 
 class ComputerListApiView(ListCreateAPIView):
@@ -22,3 +22,13 @@ class CategoryListApiView(ListCreateAPIView):
 class CategoryUpdateView(RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializers
+
+
+class ModelListView(ListCreateAPIView):
+    queryset = Model.objects.all()
+    serializer_class = ModelSerializers
+
+
+class ModelUpdateView(RetrieveUpdateDestroyAPIView):
+    queryset = Model.objects.all()
+    serializer_class = ModelSerializers

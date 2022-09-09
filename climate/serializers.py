@@ -1,11 +1,17 @@
 from rest_framework import serializers
-from .models import Climate,Category
+from .models import Climate,Category,Model
 
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
         
+
+class ModelSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Model
+        fields = '__all__'
+
 
 class ClimateSerializers(serializers.ModelSerializer):
     category = CategorySerializers(read_only=True)

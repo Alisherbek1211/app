@@ -4,6 +4,7 @@ from helpers.models import BaseModel
 
 class Category(BaseModel):
     name = models.CharField(max_length=255)
+    icon = models.ImageField()
 
     class Meta:
         verbose_name = "Kategoriya"
